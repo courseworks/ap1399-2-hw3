@@ -40,9 +40,9 @@ Each Node represents a number and has a pointer to parent Node and some children
 The initial values of value and parent must be 0 and null pointer.
 
 The order of each node represent the depth of tree that this node is its root. for example order of Node(3) is 3(path 3,5,9 and 10) and order of Node(9) is 1(path 9 and 10). order of a single Node is 0!
-<img href="stuff/p1">
+<img src="stuff/p1.png">
 
-In addition to above, this class has 3 other methods that are explained below!
+In addition above, this class has 3 other method that explain below!
 ```c++
 Node* merge(Node*, Node*);
 bool is_min_heap(Node);
@@ -50,12 +50,12 @@ bool is_max_heap(Node);
 ```
 - The first one should merge two Node if they have same order, otherwise it must throw logic error!  Note that both Node will change after merging them. we assume that each node is min heap and our target is merging them in a way that the result be min heap. An example is here:
 
-    <img href="stuff/p2">
-    <img href="stuff/p3">
+    <img src="stuff/p2.png">
+    <img src="stuff/p3.png">
 
 - The next two, get a Node and return true if the subtree that this node is its root be min/max heap. for example in first image Node(5) is root of a min heap beacuse ```5<8, 5<9 and 9<10```. For other example, in image below:
 
-    <img href="stuff/p4">
+    <img src="stuff/p4.png">
 
     Node(21), Node(52), Node(70), Node(16) are max and min heap and Node(30) is max heap. Nota that Node(10) is **Not** min heap becaues each subtree of a min heap tree must be min heap!
 
@@ -99,13 +99,13 @@ class BinomialHeap{
 ```
 Some explanation about method insert(Node*):
 Look this binomial heap.
-<img href="staff/p6">
+<img src="stuff/p6.png">
 If we remove smallest Node(Node 2) by calling method pop(), our heap convert to this:
-<img href="staff/p7">
+<img src="stuff/p7.png">
 So we must insert out root Nodes one by one so we you this method to do that.
-<img href="staff/p8">
-<img href="staff/p9">
-<img href="staff/p10">
+<img src="stuff/p8.png">
+<img src="stuff/p9.png">
+<img src="stuff/p10.png">
 
 **Note:** If N=0 and call method pop(), you should throw logic error!
 **Note:** You must not remove any keyword in these methods:
@@ -131,10 +131,10 @@ BinomialHeap bh{1,2,3,4,5,6,7,8,9,10};
 bh[3] = 12;
 ```
 This means that the you should search in roots and find the Node that its order is 3 and set its value to 12. If there is not any Node with order 3, you should change the begining Node of roots but you should convert the new heap to min heap. So you should swap the value of the Node with its minimum children when the new value be greater than at least one children and continue this way for its children. for example consider previous image! if we run bh[3]=14, so we have:
-<img href="staff/p11">
-<img href="staff/p12">
-<img href="staff/p13">
-<img href="staff/p14">
+<img src="stuff/p11.png">
+<img src="stuff/p12.png">
+<img src="stuff/p13.png">
+<img src="stuff/p14.png">
 
 # main File
 You must not alter the **main.cpp** file at all. Just write all your codes in the **binomialheap** header and cpp files. Good luck!
